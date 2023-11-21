@@ -26,11 +26,10 @@ public class Equipe implements Serializable {
     private Instant createdAt;
     public Equipe() {
     }
-    public Equipe(String id, String nome, String placaViatura, Set<Funcionario> funcionarios, Instant createdAt) {
+    public Equipe(String id, String nome, String placaViatura, Instant createdAt) {
         this.id = id;
         this.nome = nome;
         this.placaViatura = placaViatura;
-        this.funcionarios = funcionarios;
         this.createdAt = createdAt;
     }
     public String getId() {
@@ -51,11 +50,17 @@ public class Equipe implements Serializable {
     public void setPlacaViatura(String placaViatura) {
         this.placaViatura = placaViatura;
     }
-    public Set<Funcionario> getFuncionarios() {
-        return funcionarios;
+    // public Set<Funcionario> getFuncionarios() {
+    //     return funcionarios;
+    // }
+    // public void setFuncionarios(Set<Funcionario> funcionarios) {
+    //     this.funcionarios = funcionarios;
+    // }
+    public void addFuncionario(Funcionario funcionario) {
+        funcionarios.add(funcionario);
     }
-    public void setFuncionarios(Set<Funcionario> funcionarios) {
-        this.funcionarios = funcionarios;
+    public void removeFuncionario(Funcionario funcionario) {
+        funcionarios.remove(funcionario);
     }
     public Instant getCreatedAt() {
         return createdAt;

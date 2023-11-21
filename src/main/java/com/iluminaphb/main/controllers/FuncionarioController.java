@@ -42,10 +42,10 @@ public class FuncionarioController {
 
     @PostMapping
     public ResponseEntity<Funcionario> criarFuncionario(@RequestBody Funcionario obj) {
-        Funcionario Funcionario = service.criarFuncionario(obj);
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(Funcionario.getId())
+        Funcionario funcionario = service.criarFuncionario(obj);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(funcionario.getId())
                 .toUri();
-        return ResponseEntity.created(uri).body(Funcionario);
+        return ResponseEntity.created(uri).body(funcionario);
     }
 
     @DeleteMapping("/{id}")

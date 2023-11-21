@@ -73,8 +73,5 @@ public class EquipeService {
         if (obj.getPlacaViatura() != null) {
             newObj.setPlacaViatura(obj.getPlacaViatura());
         }
-        if (obj.getFuncionarios() != null) {
-            newObj.setFuncionarios(obj.getFuncionarios());
-        }
     }
 }
