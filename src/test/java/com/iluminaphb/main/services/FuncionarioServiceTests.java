@@ -20,29 +20,22 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.iluminaphb.main.models.Endereco;
-import com.iluminaphb.main.models.Equipe;
 import com.iluminaphb.main.models.Funcionario;
-import com.iluminaphb.main.repositories.EquipeRepository;
+import com.iluminaphb.main.repositories.FuncionarioRepository;
 
 @ExtendWith(MockitoExtension.class)
 public class FuncionarioServiceTests {
     @Mock
-    private EquipeRepository repository;
+    private FuncionarioRepository repository;
 
     @InjectMocks
-    private EquipeService service;
+    private FuncionarioService service;
 
-    private Equipe equipe;
     private Funcionario funcionario;
 
     @BeforeEach
     void setup() {
         MockitoAnnotations.openMocks(this);
-        equipe = new Equipe(
-                UUID.randomUUID().toString(),
-                "Teste de nome",
-                "PIJ5021",
-                Instant.now());
 
         funcionario = new Funcionario(
                 UUID.randomUUID().toString(),
@@ -61,16 +54,22 @@ public class FuncionarioServiceTests {
     }
 
     @Test
-    @DisplayName("Deve listar todas as equipes")
-    void deveListarTodasEquipes() {
-        when(repository.findAll()).thenReturn(Collections.singletonList(equipe));
-        List<Equipe> resultado = service.listarEquipes();
+    @DisplayName("Deve listar todos os funcinários")
+    void deveListarTodosFuncionarios() {
+        when(repository.findAll()).thenReturn(Collections.singletonList(funcionario));
+        List<Funcionario> resultado = service.listarFuncionarios();
         // Ver se tão iguais a lista com o resultado retornado da service
-        assertEquals(Collections.singletonList(equipe), resultado);
+        assertEquals(Collections.singletonList(funcionario), resultado);
         //   Ver se foi chamado somente uma ver o repository, se não tá em loop
         verifyNoMoreInteractions(repository);
         //   Ver se o repository foi chamado alguma vez
         verify(repository).findAll();
+    }
+
+    @Test
+    @DisplayName("Validar a máscara de telefone se está funcionando")
+    void deveValidarMascaraDeTelefone() {
+        
     }
 
 }

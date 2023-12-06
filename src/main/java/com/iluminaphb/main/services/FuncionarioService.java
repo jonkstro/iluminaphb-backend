@@ -57,6 +57,8 @@ public class FuncionarioService {
             // Vai buscar pelo ID, se não achar nada já mete a exceção
             Funcionario newObj = listarPorId(id);
             updateData(obj, newObj);
+            // Após atualizar os dados, vamos validar se estão corretos mesmo
+            validaDados(newObj);
             return repository.save(newObj);
         } catch (EntityNotFoundException e) {
             throw new ResourceNotFoundException(obj.getId());
