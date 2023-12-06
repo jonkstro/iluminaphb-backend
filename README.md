@@ -20,44 +20,96 @@ O **Spring Security** será implementado para garantir a autenticação e autori
 
 O **MongoDB** será utilizado como o banco de dados NoSQL para armazenar os dados relacionados à gestão de iluminação pública. Sua flexibilidade de esquema e escalabilidade horizontal atendem às demandas de um sistema que lida com uma grande quantidade de dados e atualizações frequentes.
 
-## Funcionalidades do Backend
 
-1. **API de Manutenções:**
-    - Implementação de endpoints para realizar o cadastro e consulta de manutenções.
-2. **API de Reclamações:**
-    - Desenvolvimento de endpoints para registrar e recuperar reclamações sobre iluminação precária.
-3. **API de Pontos sem Iluminação:**
-    - Criação de endpoints para identificar e mapear pontos onde ainda não há instalação de iluminação pública.
-4. **API de Consumo de Serviços e Materiais:**
-    - Implementação de endpoints para registrar e recuperar o consumo de serviços e materiais em cada manutenção, facilitando a geração de históricos.
-5. **Integração com GPS:**
-    - Integração do sistema com o GPS para permitir localização precisa em novos pontos de instalação.
-6. **Autenticação Segura:**
-    - Implementação de autenticação segura usando Spring Security para garantir acesso controlado ao sistema.
-7. **Relatórios de Desempenho:**
-    - Desenvolvimento de endpoints para gerar relatórios periódicos sobre o desempenho do sistema e das manutenções realizadas.
-8. **Integração com MongoDB:**
-    - Configuração e implementação das operações de CRUD para interação eficiente com o banco de dados MongoDB.
 
-## Requisitos Não Funcionais do Backend
+## Requisitos Funcionais:
 
-1. **Desempenho:**
-    - O sistema deve oferecer respostas rápidas, mesmo em situações de carga elevada.
-2. **Segurança:**
-    - Garantir a segurança dos dados sensíveis dos usuários e das informações sobre manutenções.
-3. **Usabilidade:**
-    - Assegurar a eficiência na interação com o backend, facilitando o desenvolvimento de aplicações front-end.
-4. **Disponibilidade:**
-    - Manter o backend disponível 24/7, minimizando períodos de inatividade.
-5. **Escalabilidade:**
-    - Ser capaz de lidar com um aumento no número de usuários e dados ao longo do tempo.
-6. **Compatibilidade:**
-    - Garantir compatibilidade com diferentes tecnologias e sistemas.
-7. **Backup e Recuperação:**
-    - Implementar um sistema eficaz de backup e recuperação de dados.
-8. **Privacidade:**
-    - Respeitar as normas de privacidade e proteção de dados.
-9. **Manutenibilidade:**
-    - Facilitar a manutenção do sistema, permitindo atualizações e correções sem impactar o uso.
-10. **Integração com Sistemas Externos:**
-    - Ser capaz de integrar-se a sistemas externos, como bases de dados municipais.
+### RF01 - Cadastro de Manutenções:
+- **Descrição:** Permitir o cadastro de manutenções relacionadas à iluminação pública.
+- **Categoria:** Obrigatório.
+
+### RF02 - Registro de Reclamações:
+- **Descrição:** Possibilitar aos usuários registrar reclamações sobre iluminação deficiente.
+- **Categoria:** Obrigatório.
+
+### RF03 - Acompanhamento de Status:
+- **Descrição:** Proporcionar aos usuários o acompanhamento em tempo real do status das manutenções.
+- **Categoria:** Importante.
+
+### RF04 - Mapeamento de Pontos sem Iluminação:
+- **Descrição:** Identificar e mapear pontos onde ainda não há instalação de iluminação pública.
+- **Categoria:** Obrigatório.
+
+### RF05 - Histórico de Manutenções:
+- **Descrição:** Manter um histórico detalhado de todas as manutenções realizadas.
+- **Categoria:** Importante.
+
+### RF06 - Integração com GPS:
+- **Descrição:** Utilizar o GPS do dispositivo para localização precisa em novos pontos de instalação.
+- **Categoria:** Importante.
+
+### RF07 - Notificações em Tempo Real:
+- **Descrição:** Enviar notificações em tempo real sobre o andamento das manutenções.
+- **Categoria:** Importante.
+
+### RF08 - Relatórios de Desempenho:
+- **Descrição:** Gerar relatórios periódicos sobre o desempenho do sistema e das manutenções realizadas.
+- **Categoria:** Importante.
+
+### RF09 - Autenticação de Usuários:
+- **Descrição:** Implementar autenticação segura para garantir acesso controlado ao sistema.
+- **Categoria:** Obrigatório.
+
+### RF10 - Registro de Consumo de Serviços:
+- **Descrição:** Permitir o registro do quanto de serviços foram consumidos em cada manutenção.
+- **Categoria:** Importante.
+
+### RF11 - Registro de Consumo de Materiais:
+- **Descrição:** Possibilitar o registro do consumo de materiais utilizado em cada manutenção.
+- **Categoria:** Importante.
+
+### RF12 - Histórico de Consumo:
+- **Descrição:** Manter um histórico detalhado do consumo de serviços e materiais em cada manutenção.
+- **Categoria:** Desejável.
+
+## Requisitos Não Funcionais:
+
+### RNF01 - Desempenho:
+- **Descrição:** O aplicativo deve oferecer uma resposta rápida, mesmo em situações de carga elevada.
+- **Categoria:** Obrigatório.
+
+### RNF02 - Segurança:
+- **Descrição:** Garantir a segurança dos dados sensíveis dos usuários e das informações sobre manutenções.
+- **Categoria:** Obrigatório.
+
+### RNF03 - Usabilidade:
+- **Descrição:** Assegurar uma interface intuitiva para facilitar o uso por usuários de diferentes níveis de habilidade.
+- **Categoria:** Obrigatório.
+
+### RNF04 - Disponibilidade:
+- **Descrição:** Manter o aplicativo disponível 24/7, minimizando períodos de inatividade.
+- **Categoria:** Obrigatório.
+
+### RNF05 - Escalabilidade:
+- **Descrição:** Ser capaz de lidar com um aumento no número de usuários e dados ao longo do tempo.
+- **Categoria:** Importante.
+
+### RNF06 - Compatibilidade:
+- **Descrição:** Garantir compatibilidade com diferentes dispositivos móveis e sistemas operacionais.
+- **Categoria:** Importante.
+
+### RNF07 - Backup e Recuperação:
+- **Descrição:** Implementar um sistema eficaz de backup e recuperação de dados.
+- **Categoria:** Importante.
+
+### RNF08 - Privacidade:
+- **Descrição:** Respeitar as normas de privacidade e proteção de dados.
+- **Categoria:** Obrigatório.
+
+### RNF09 - Manutenibilidade:
+- **Descrição:** Facilitar a manutenção do sistema, permitindo atualizações e correções sem impactar o uso.
+- **Categoria:** Importante.
+
+### RNF10 - Integração com Sistemas Externos:
+- **Descrição:** Ser capaz de integrar-se a sistemas externos, como bases de dados municipais.
+- **Categoria:** Desejável.
